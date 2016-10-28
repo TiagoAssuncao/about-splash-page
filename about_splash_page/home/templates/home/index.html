@@ -1,3 +1,4 @@
+{% load staticfiles %}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -10,12 +11,8 @@
     <!-- Favicon -->
 
     <!-- Main CSS file -->
-    <link rel="stylesheet" href="http://the-lumberjacks.com/items/coming-soon/elegant/demos/demo-3/css/style.css">
+    <link type="text/css" rel="stylesheet" href="{% static "css/style.css" %}"  media="screen,projection"/>
 
-    <!--[if lt IE 9]>
-      <script src="js/html5shiv.js"></script>
-      <script src="js/respond.min.js"></script>
-    <![endif]-->
 
   </head>
   <body>
@@ -271,27 +268,15 @@
   </footer>
   <!-- /FOOTER -->
   
-  <!-- jQuery -->
-  <script src="http://the-lumberjacks.com/items/coming-soon/elegant/demos/demo-3/js/jquery-1.11.0.min.js"></script>
-  <!-- Countdown -->
-  <script src="http://the-lumberjacks.com/items/coming-soon/elegant/demos/demo-3/js/jquery.countdown.js"></script>
-  <!-- Backstretch -->
-  <!-- <script src="js/jquery.backstretch.min.js"></script> -->
-  <!-- Device.js -->
-  <script src="http://the-lumberjacks.com/items/coming-soon/elegant/demos/demo-3/js/device.min.js"></script>
-  <!-- YT Player -->
-  <script src="http://the-lumberjacks.com/items/coming-soon/elegant/demos/demo-3/js/jquery.mb.YTPlayer.js"></script>
-  <!-- scrollReveal -->
-  <script src="http://the-lumberjacks.com/items/coming-soon/elegant/demos/demo-3/js/scrollReveal.js"></script>
-  <!-- Stellar.js -->
-  <script src="http://the-lumberjacks.com/items/coming-soon/elegant/demos/demo-3/js/jquery.stellar.min.js"></script>
-  <!-- jQuery Tweetie -->
-  <script src="http://the-lumberjacks.com/items/coming-soon/elegant/demos/demo-3/twitter/tweetie.js"></script>
-  <!-- Ajax mailchimp -->
-  <script src="http://the-lumberjacks.com/items/coming-soon/elegant/demos/demo-3/js/jquery.ajaxchimp.js"></script>
-  <!-- Elegant js scripts -->
-  <script src="http://the-lumberjacks.com/items/coming-soon/elegant/demos/demo-3/js/lj-elegant.js"></script>  
-  <!-- Color Switcher -->
-  <script src="http://the-lumberjacks.com/items/coming-soon/elegant/demos/demo-3/js/lj-color-switcher.js"></script> 
+  <script type="text/javascript" src="{% static "js/jquery-1.11.0.min.js" %}"></script>
+  <script type="text/javascript" src="{% static "js/jquery.countdown.js" %}"></script>
+  <script type="text/javascript" src="{% static "js/device.min.js" %}"></script>
+  <script type="text/javascript" src="{% static "js/jquery.mb.YTPlayer.js" %}"></script>
+  <script type="text/javascript" src="{% static "js/scrollReveal.js" %}"></script>
+  <script type="text/javascript" src="{% static "js/jquery.stellar.min.js" %}"></script>
+  <script type="text/javascript" src="{% static "twitter/tweetie.js" %}"></script>
+  <script type="text/javascript" src="{% static "js/jquery.ajaxchimp.js" %}"></script>
+  <script type="text/javascript" src="{% static "js/lj-elegant.js" %}"></script>
+  <script type="text/javascript" src="{% static "js/lj-color-switcher.js" %}"></script>
   </body>
 </html>

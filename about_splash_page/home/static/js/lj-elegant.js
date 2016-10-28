@@ -108,11 +108,11 @@
     // Countdown
     // To change date, simply edit: var endDate = "June 26, 2015 20:39:00";
     $(function() {
-      var endDate = "June 26, 2018 20:39:00";
+      var endDate = "November 16, 2016 20:00:00";
       $('.lj-countdown .row').countdown({
         date: endDate,
         render: function(data) {
-          $(this.el).html('<div><div><span>' + (parseInt(this.leadingZeros(data.years, 2)*365) + parseInt(this.leadingZeros(data.days, 2))) + '</span><span>days</span></div><div><span>' + this.leadingZeros(data.hours, 2) + '</span><span>hours</span></div></div><div class="lj-countdown-ms"><div><span>' + this.leadingZeros(data.min, 2) + '</span><span>minutes</span></div><div><span>' + this.leadingZeros(data.sec, 2) + '</span><span>seconds</span></div></div>');
+          $(this.el).html('<div><div><span>' + (parseInt(this.leadingZeros(data.years, 2)*365) + parseInt(this.leadingZeros(data.days, 2))) + '</span><span>dias</span></div><div><span>' + this.leadingZeros(data.hours, 2) + '</span><span>horas</span></div></div><div class="lj-countdown-ms"><div><span>' + this.leadingZeros(data.min, 2) + '</span><span>minutos</span></div><div><span>' + this.leadingZeros(data.sec, 2) + '</span><span>segundos</span></div></div>');
         }
       });
     });

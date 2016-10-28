@@ -1,259 +1,298 @@
-{% load staticfiles %}
 
-<!-- <form action="" method="post" accept&#45;charset="utf&#45;8"> -->
-<!--     {% csrf_token %} -->
-<!--     <label for="Email">Email</label><input type="text" name="Email" value="" id="Email">  -->
-<!--     <label for="first">First Name</label><input type="text" name="first" value="" id="first">  -->
-<!--     <label for="last">Last Name</label><input type="text" name="last" value="" id="last">  -->
-<!--     <br /> -->
-<!--     <label for="Enviar">Enviar</label><input type="submit" name="Enviar" value="Enviar" id="Enviar"> -->
-<!-- </form> -->
-<!--  -->
-<head>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
     <meta charset="utf-8">
-    <link type="text/css" rel="stylesheet" href="{% static "css/materialize.min.css" %}"  media="screen,projection"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <style type="text/css" media="screen">
-body {
-    display: flex;
-    min-height: 100vh;
-    flex-direction: column;
-}
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
 
-    main {
-        flex: 1 0 auto;
-    }
+    <title>Elegant - Minimal Multipurpose Coming Soon / Under Construction HTML Template</title>
+  
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="http://the-lumberjacks.com/items/coming-soon/elegant/demos/demo-3/img/favicon.png">
 
-    h1.title,
-    .footer-copyright a {
-        font-family: 'Architects Daughter', cursive;
-        text-transform: uppercase;
-        font-weight: 900;
-    }
+    <!-- Main CSS file -->
+    <link rel="stylesheet" href="http://the-lumberjacks.com/items/coming-soon/elegant/demos/demo-3/css/style.css">
 
-    /* start welcome animation */
+    <!--[if lt IE 9]>
+      <script src="js/html5shiv.js"></script>
+      <script src="js/respond.min.js"></script>
+    <![endif]-->
 
-    body.welcome {
-        background: #512da8;
-        overflow: hidden;
-        -webkit-font-smoothing: antialiased;
-    }
+  </head>
+  <body>
 
-    .welcome .splash {
-        height: 0px;
-        padding: 0px;
-        border: 130em solid #039be5;
-        position: fixed;
-        left: 50%;
-        top: 100%;
-        display: block;
-        box-sizing: initial;
-        overflow: hidden;
+  <!-- PRELOADER -->
+  <div class="lj-preloader"></div>
+  <!-- /PRELOADER -->
 
-        border-radius: 50%;
-        transform: translate(-50%, -50%);
-        animation: puff 0.5s 1.8s cubic-bezier(0.55, 0.055, 0.675, 0.19) forwards, borderRadius 0.2s 2.3s linear forwards;
-    }
+  <!-- HEADER -->
+  <header class="yt-background">
 
-    .welcome #welcome {
-        background: #311b92 ;
-        width: 56px;
-        height: 56px;
-        position: absolute;
-        left: 50%;
-        top: 50%;
-        overflow: hidden;
-        opacity: 0;
-        transform: translate(-50%, -50%);
-        border-radius: 50%;
-        animation: init 0.5s 0.2s cubic-bezier(0.55, 0.055, 0.675, 0.19) forwards, moveDown 1s 0.8s cubic-bezier(0.6, -0.28, 0.735, 0.045) forwards, moveUp 1s 1.8s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards, materia 0.5s 2.7s cubic-bezier(0.86, 0, 0.07, 1) forwards, hide 2s 2.9s ease forwards;
-    }
+    <!-- YOUTUBE PLAYER -->
+    <div class="yt-player" data-property="{videoURL:'http://youtu.be/0pXYp72dwl0', containment:'header', startAt:0, mute:false, autoPlay:true, loop:true, opacity:1, showControls:false, showYTLogo:false, vol:25}"></div>
+    <!-- /YOUTUBE PLAYER -->
 
-    /* moveIn */
-    .welcome header,
-    .welcome a.btn {
-        opacity: 0;
-        animation: moveIn 2s 3.1s ease forwards;
-    }
+    <!-- HEADER OVERLAY --> 
+    <div class="lj-overlay lj-overlay-color lj-overlay-image"></div>
+    <!-- /HEADER OVERLAY -->
+    
+    <div class="container">
+      
+      <div class="wrapper">
 
-    @keyframes init {
-        0% {
-            width: 0px;
-            height: 0px;
-        }
-        100% {
-            width: 56px;
-            height: 56px;
-            margin-top: 0px;
-            opacity: 1;
-        }
-    }
-
-    @keyframes puff {
-        0% {
-            top: 100%;
-            height: 0px;
-            padding: 0px;
-        }
-        100% {
-            top: 50%;
-            height: 100%;
-            padding: 0px 100%;
-        }
-    }
-
-    @keyframes borderRadius {
-        0% {
-            border-radius: 50%;
-        }
-        100% {
-            border-radius: 0px;
-        }
-    }
-
-    @keyframes moveDown {
-        0% {
-            top: 50%;
-        }
-        50% {
-            top: 40%;
-        }
-        100% {
-            top: 100%;
-        }
-    }
-
-    @keyframes moveUp {
-        0% {
-            background: #311b92;
-            top: 100%;
-        }
-        50% {
-            top: 40%;
-        }
-        100% {
-            top: 50%;
-            background: #039be5;
-        }
-    }
-
-    @keyframes materia {
-        0% {
-            background: #039be5;
-        }
-        50% {
-            background: #039be5;
-            top: 26px;
-        }
-        100% {
-            background: #311b92;
-            width: 100%;
-            height: 64px;
-            border-radius: 0px;
-            top: 26px;
-        }
-    }
-
-    @keyframes moveIn {
-        0% {
-            opacity: 0;
-        }
-        100% {
-            opacity: 1;
-        }
-    }
-
-    @keyframes hide {
-        0% {
-            opacity: 1;
-        }
-        100% {
-            opacity: 0;
-        }
-    }
-    </style> 
-</head>
-
-<body class="welcome">
-    <span id="splash-overlay" class="splash"></span>
-    <span id="welcome" class="z-depth-4"></span>
-
-    <header class="navbar-fixed">
-        <nav class="row deep-purple darken-3">
-            <div class="col s12">
-                <ul class="right">
-                    <li class="right">
-                        <a href="" target="_blank" class="fa fa-facebook-square fa-2x waves-effect waves-light"><span class="icon-text"></span></a>
-                    </li>
-                    <li class="right">
-                        <a href="" target="_blank" class="fa fa-github-square fa-2x waves-effect waves-light"><span class="icon-text"></span></a>
-                    </li>
-                </ul>
+        <!-- LOGO -->
+          <div class="row">
+            <div class="col-xs-12 lj-logo" data-scroll-reveal="wait 0.25s, then enter top and move 40px over 1s">
+              <a href="#" title="">
+                <img src="http://the-lumberjacks.com/items/coming-soon/elegant/demos/demo-3/img/logo-1x.png" class="lj-logo-1x" alt="">
+                <img src="http://the-lumberjacks.com/items/coming-soon/elegant/demos/demo-3/img/logo-2x.png" class="lj-logo-2x" alt="">
+              </a>
             </div>
-        </nav>
-    </header>
+          </div>
+        <!-- /LOGO -->
+        
+        <!-- TITLE -->
+          <div class="row">
+            <div class="col-xs-12 lj-title" data-scroll-reveal="wait 0.5s, then enter left and move 40px over 1s">
+              <h1 class="lj-text-center">Coming back <span>soon</span>.</h1>
+            </div>
+          </div>
+        <!-- /TITLE -->
+        
+        <!-- LINE -->
+          <div class="row">
+            <div class="col-xs-12 lj-line" data-scroll-reveal="wait 0.75s, then enter right and move 40px over 1s">
+              <div></div>
+            </div>
+          </div>
+        <!-- /LINE -->
 
-    <main class="valign-wrapper">
-    <span class="container grey-text text-lighten-1 ">
+        <!-- TITLE PARAGRAPH -->
+          <div class="row">
+            <div class="col-xs-12 col-sm-8 col-sm-offset-2 lj-title-paragraph" data-scroll-reveal="wait 1s, then enter right and move 40px over 1s">
+              <p class="lj-text-center">A perfect solution for all creative folks! You will love Elegant as much as we do. It will morph perfectly on your needs! There is no limit to what you can accomplish using our template. Look at it!</p>
+            </div>
+          </div>
+        <!-- /TITLE PARAGRAPH -->
+        
+        <!-- COUNTDOWN -->      
+        <div class="row">
+          <div class="col-sm-12 lj-countdown" data-scroll-reveal="wait 1.25s, then enter bottom and move 40px over 1s">
+            <div class="row">
 
-        <p class="flow-text">Welcome to</p>
-        <h1 class="title grey-text text-lighten-3">jason's classroom</h1>
-
-        <blockquote class="flow-text">A place to study for your High School Equivalency Diploma</blockquote>
-
-        <div class="center-align">
-            <!-- Dropdown Trigger -->
-            <a class="btn dropdown-button" href="" data-activates="exams">hse exams<i class="material-icons right">expand_more</i></a>
-
-            <!-- Dropdown Structure -->
-            <ul id="exams" class="dropdown-content">
-                <li><a href="#!">GED&trade; Exam</a></li>
-                <li><a href="#!">HiSET&trade; Exam</a></li>
-                <li><a href="#!">TASC&trade; Exam</a></li>
-            </ul>
-            <!-- Dropdown Trigger -->
-            <a class="btn dropdown-button" href="" data-activates="study">study<i class="material-icons right">expand_more</i></a>
-
-            <!-- Dropdown Structure -->
-            <ul id="study" class="dropdown-content">
-                <li><a href="#!">mathematics</a></li>
-                <li><a href="#!">reading</a></li>
-                <li><a href="#!">science</a></li>
-                <li><a href="#!">social studies</a></li>
-                <li><a href="#!">writing</a></li>
-            </ul>
+            </div>
+          </div>
         </div>
+        <!-- /COUNTDOWN -->
 
-    </span>
-    </main>
+        <!-- YOUTUBE CONTROLS -->
+        <div class="row">
+          <div class="col-xs-12 yt-controls" data-scroll-reveal="wait 1.75s, then enter right and move 20px over 1s">
+            <a id="yt-volume" class="fa fa-volume-up" href="#">&nbsp;</a>
+            <a id="yt-play" class="fa fa-pause" href="#">&nbsp;</a>
+          </div>
+        </div>
+        <!-- /YOUTUBE CONTROLS -->
 
-    <div class="fixed-action-btn">
-        <a href="#message" class="modal-trigger btn btn-large btn-floating amber waves-effect waves-light">
-            <i class="large material-icons">message</i>
+      </div>
+      
+      <!-- SCROLL DOWN -->
+      <div class="lj-scroll-down hidden-xs" data-scroll-reveal="wait 1.75s, then enter top and move 20px over 1s">
+        <a href="#" title="">
+          <i class="fa fa-chevron-down"></i>
         </a>
-    </div>
+      </div>
+      <!-- /SCROLL DOWN -->
 
-    <div id="message" class="modal modal-fixed-footer">
-        <div class="modal-content">
-            <h4>Contact</h4>
-            <p>coming soon...</p>
-        </div>
-        <div class="modal-footer">
-            <a href="" class="modal-action modal-close waves-effect btn-flat">close</a>
-        </div>
     </div>
+    
+  </header>
+  <!-- /HEADER -->
 
-    <footer class="page-footer deep-purple darken-3">
-        <div class="footer-copyright deep-purple darken-4">
-            <div class="container">
-                <time datetime="afsd">&copy; 2016 Jason</time>
+  <!-- ICONS -->
+  <div class="icons module">
+    <div class="container">
+      <!-- COLUMNS -->
+      <div class="row">
+        <div class="col-sm-4 lj-icon-box" data-scroll-reveal="wait 0.25s, then enter left and move 40px over 1s">
+          <span><i class="fa fa-cogs"></i></span>
+          <h3 class="lj-text-uppercase">Development</h3>
+          <p>One morning, when Gregor Samsa woke from troubled dreams, he found himself transformed in his bed into a horrible vermin.</p>
+          <a href="#" title="">More info</a>
+        </div>
+        
+        <div class="col-sm-4 lj-icon-box" data-scroll-reveal="wait 0.5s, then enter top and move 40px over 1s">
+          <span><i class="fa fa-support"></i></span>
+          <h3 class="lj-text-uppercase">Friendly support</h3>
+          <p>It wasn't a dream. His room, a proper human room although a little too small, lay peacefully between its four familiar walls.</p>
+          <a href="#" title="">More info</a>
+        </div>
+        
+        <div class="col-sm-4 lj-icon-box" data-scroll-reveal="wait 0.25s, then enter right and move 40px over 1s">
+          <span><i class="fa fa-users"></i></span>
+          <h3 class="lj-text-uppercase">User-friendly</h3>
+          <p>We don't want to conquer the cosmos, we simply want to extend the boundaries of Earth to the frontiers of the cosmos.</p>
+          <a href="#" title="">More info</a>
+        </div>
+      </div>
+      <!-- /COLUMNS -->
+    </div>
+  </div>
+  <!-- /ICONS -->
+  
+  <!-- SUBSCRIBE -->
+  <div class="subscribe module" data-stellar-background-ratio="0.5">
+    <div class="container">
+      <div class="row">
+        <!-- SUBSCRIBE TITLE -->
+        <div class="col-sm-12 col-md-6 lj-subscribe-title" data-scroll-reveal="wait 0.25s, then enter left and move 40px over 1s">
+          <h2>Subscribe <span>now</span>.</h2>
+        </div>
+        <!-- /SUBSCRIBE TITLE -->
+        
+        <!-- SUBSCRIBE FORM -->
+        <div class="col-sm-12 col-md-6 lj-subscribe-form" data-scroll-reveal="wait 0.5s, then enter top and move 40px over 1s">
+          <form id="subscribe">
+            <div class="clearfix">
+              <input type="text" value="" name="subscribe-email" id="subscribe-email" placeholder="Enter your e-mail here">
+              <input type="submit" value="Submit" name="subscribe-submit">
             </div>
+            <label for="subscribe-email" class="lj-subscribe-message"></label>
+          </form>
         </div>
-    </footer>
-    <!--Import jQuery before materialize.js-->
-    <script type="text/javascript" src="{% static "js/jquery-2.1.1.min.js" %}"></script>
-    <script type="text/javascript" src="{% static "js/materialize.min.js" %}"></script>
-        <script type="text/javascript" src="{% static "js/jquery-2.1.1.min.js" %}"></script>
-            <script type="text/javascript" src="{% static "js/materialize.min.js" %}"></script>
-</body>
+        <!-- /SUBSCRIBE FORM -->
+      </div>
+    </div>
+  </div>
+  <!-- /SUBSCRIBE -->
+  
+  <!-- WHO WE ARE -->
+  <div class="who-we-are module">
+    <div class="container">
+      <div class="row">
+        <!-- QUOTE -->
+        <div class="col-sm-6 lj-quote">
+          <span data-scroll-reveal="wait 0.25s, then enter left and move 20px over 1s"><i class="fa fa-quote-left"></i></span>
+          <blockquote data-scroll-reveal="wait 0.5s, then enter right and move 20px over 1s">Courage is what it takes to stand up and speak; courage is also what it takes to sit down and listen.<cite>&ndash; Winston Churchill</cite></blockquote>
+        </div>
+        <!-- /QUOTE -->
+        
+        <!-- ABOUT -->
+        <div class="col-sm-6 lj-about">
+          <h2 data-scroll-reveal="wait 0.25s, then enter top and move 20px over 1s">Who we <span>are</span>.</h2>
+          <p class="lj-about-leading" data-scroll-reveal="wait 0.5s, then enter right and move 20px over 1s">In a jungle of concrete somewhere in Europe, raw men work hard doing one of the world’s most dangerous jobs – building themes.</p>
+          <p data-scroll-reveal="wait 0.5s, then enter left and move 20px over 1s">This extremely ruthless but satisfying effort is driven by passion and will help move forward your ideas.</p>
+          <p data-scroll-reveal="wait 0.75s, then enter bottom and move 20px over 1s">Fully responsive, highly customizable Coming Soon template designed using Bootstrap 3 framework, yo! Spread the good news to your friends and family before they find out that you knew and you didn’t even mention it and then they’d be like, “oh, no you didn’t!”.</p>
+        </div>
+        <!-- /ABOUT -->
+      </div>
+    </div>
+  </div>
+  <!-- /WHO WE ARE -->
+  
+  <!-- TWITTER -->
+  <div class="twitter module">
+    <div class="container">
+      <div class="row">
+        <!-- TWITTER TITLE -->
+        <div class="col-sm-4 lj-twitter-title" data-scroll-reveal="wait 0.25s, then enter left and move 40px over 1s">
+          <h2>Latest <span>tweets</span>.</h2>
+        </div>
+        <!-- /TWITTER TITLE -->
+        <!-- TWITTER FEED -->
+        <div class="col-sm-8 lj-twitter-feed" data-scroll-reveal="wait 0.5s, then enter top and move 40px over 1s">
+
+        </div>
+        <!-- /TWITTER FEED -->
+      </div>
+    </div>
+  </div>
+  <!-- /TWITTER -->
+  
+  <!-- FOOTER -->
+  <footer class="module">
+    <div class="container">
+      <div class="row">
+        <!-- FOOTER LEFT -->
+        <div class="col-sm-6 lj-footer-left">
+          <!-- FOOTER TITLE -->
+          <h2 data-scroll-reveal="wait 0.25s, then enter top and move 20px over 1s">Contact <span>us</span>.</h2>
+          <!-- /FOOTER TITLE -->
+          
+          <!-- FOOTER PARAGRAPHS -->
+          <p class="lj-footer-leading" data-scroll-reveal="wait 0.5s, then enter left and move 20px over 1s">Don’t hesitate to ask, we are here to help you!</p>
+          <p data-scroll-reveal="wait 0.75s, then enter right and move 20px over 1s">Customer satisfaction is our priority and we understand that sometimes you need help. We provide friendly and helpful support for all our items.</p>
+          <!-- /FOOTER PARAGRAPHS -->
+          
+          <!-- FOOTER ADDRESS -->
+          <address data-scroll-reveal="wait 0.75s, then enter top and move 10px over 1s">
+            <ul>
+              <li><i class="fa-li fa fa-building-o"></i>Lumberjacks</li>
+              <li>2801 Walnut Avenue</li>
+              <li>Los Angeles, USA</li>
+            </ul>
+            <ul>
+              <li><i class="fa-li fa fa-phone"></i>765-302-2878</li>
+              <li>903-765-9492</li>
+              <li><i class="fa-li fa fa-envelope-o"></i>name@domain.com</li>
+            </ul>
+          </address>
+          <!-- /FOOTER ADDRESS -->
+          
+          <!-- FOOTER SOCIALS -->
+          <ul class="lj-footer-socials" data-scroll-reveal="wait 0.75s, then enter bottom and move 20px over 1s">
+            <li><a class="fa fa-facebook" href="#"></a></li>
+            <li><a class="fa fa-twitter" href="#"></a></li>
+            <li><a class="fa fa-google-plus" href="#"></a></li>
+          </ul>
+          <!-- /FOOTER SOCIALS -->
+        </div>
+        <!-- /FOOTER LEFT -->
+        
+        <!-- FOOTER RIGHT -->
+        <div class="col-sm-6 lj-footer-right">
+          <!-- CONTACT FORM MESSAGE-->
+          <div class="lj-contact-message">
+
+          </div>
+          <!-- /CONTACT FORM MESSAGE-->
+          
+          <!-- CONTACT FORM -->
+          <form id="contactform" data-scroll-reveal="wait 0.5s, then enter right and move 20px over 1s">
+            <input type="text" value="" name="contact-name" id="contact-name" placeholder="Name">
+            <input type="text" value="" name="contact-email" id="contact-email" placeholder="E-mail">
+            <textarea name="contact-message" id="contact-message" placeholder="Message"></textarea>
+            <input type="submit" value="Send message" name="contact-submit">
+          </form>
+          <!-- /CONTACT FORM -->
+        </div>
+        <!-- /FOOTER RIGHT -->
+      </div>
+    </div>
+  </footer>
+  <!-- /FOOTER -->
+  
+  <!-- jQuery -->
+  <script src="http://the-lumberjacks.com/items/coming-soon/elegant/demos/demo-3/js/jquery-1.11.0.min.js"></script>
+  <!-- Countdown -->
+  <script src="http://the-lumberjacks.com/items/coming-soon/elegant/demos/demo-3/js/jquery.countdown.js"></script>
+  <!-- Backstretch -->
+  <!-- <script src="js/jquery.backstretch.min.js"></script> -->
+  <!-- Device.js -->
+  <script src="http://the-lumberjacks.com/items/coming-soon/elegant/demos/demo-3/js/device.min.js"></script>
+  <!-- YT Player -->
+  <script src="http://the-lumberjacks.com/items/coming-soon/elegant/demos/demo-3/js/jquery.mb.YTPlayer.js"></script>
+  <!-- scrollReveal -->
+  <script src="http://the-lumberjacks.com/items/coming-soon/elegant/demos/demo-3/js/scrollReveal.js"></script>
+  <!-- Stellar.js -->
+  <script src="http://the-lumberjacks.com/items/coming-soon/elegant/demos/demo-3/js/jquery.stellar.min.js"></script>
+  <!-- jQuery Tweetie -->
+  <script src="http://the-lumberjacks.com/items/coming-soon/elegant/demos/demo-3/twitter/tweetie.js"></script>
+  <!-- Ajax mailchimp -->
+  <script src="http://the-lumberjacks.com/items/coming-soon/elegant/demos/demo-3/js/jquery.ajaxchimp.js"></script>
+  <!-- Elegant js scripts -->
+  <script src="http://the-lumberjacks.com/items/coming-soon/elegant/demos/demo-3/js/lj-elegant.js"></script>  
+  <!-- Color Switcher -->
+  <script src="http://the-lumberjacks.com/items/coming-soon/elegant/demos/demo-3/js/lj-color-switcher.js"></script> 
+  </body>
+</html>
